@@ -1,10 +1,21 @@
-module "storage_account" {
-  source = "./modules/storage_account"
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
+  }
+  required_version = ">= 1.0.0"
+}
 
+resource "azurerm_storage_account" "storage" {
+  for_each = var.storage_accounts
+
+  name                     = each.value.name
   resource_group_name      = var.resource_group_name
-  location                 = var.location
-  storage_account_name     = var.storage_account_name
-  account_tier             = var.account_tier
-  account_replication_type = var.account_replication_type
-  tags                     = var.tags
+  location                 = each.value.location
+  account_tier             = each.value.account_tier
+  account_replication_type = each.value.account_replication_type
+
+  tags = each.value.tags
 }
