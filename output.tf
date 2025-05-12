@@ -1,9 +1,9 @@
-output "storage_account_id" {
-  description = "ID of the created storage account"
-  value       = module.storage_account.storage_account_id
+output "storage_account_ids" {
+  description = "The IDs of the created storage accounts."
+  value       = { for k, sa in azurerm_storage_account.storage : k => sa.id }
 }
 
-output "primary_blob_endpoint" {
-  description = "Primary Blob service endpoint for the storage account"
-  value       = module.storage_account.primary_blob_endpoint
+output "storage_account_primary_endpoints" {
+  description = "The primary endpoints of the created storage accounts."
+  value       = { for k, sa in azurerm_storage_account.storage : k => sa.primary_endpoints }
 }
