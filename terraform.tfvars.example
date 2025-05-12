@@ -1,9 +1,24 @@
-resource_group_name       = "<your-resource-group>"
-location                  = "eastus"
-storage_account_name      = "<unique-storage-account-name>"
-account_tier              = "Standard"
-account_replication_type  = "LRS"
-tags = {
-  environment = "dev"
-  owner       = "your-name"
+resource_group_name = "my-resource-group"
+
+storage_accounts = {
+  example1 = {
+    name                     = "examplestorage1"
+    location                 = "East US"
+    account_tier             = "Standard"
+    account_replication_type = "LRS"
+    tags = {
+      environment = "dev"
+      project     = "example"
+    }
+  }
+  example2 = {
+    name                     = "examplestorage2"
+    location                 = "West US"
+    account_tier             = "Premium"
+    account_replication_type = "GRS"
+    tags = {
+      environment = "prod"
+      project     = "example"
+    }
+  }
 }
