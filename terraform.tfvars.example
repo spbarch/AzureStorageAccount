@@ -1,4 +1,4 @@
-resource_group_name = "my-resource-group"
+resource_group_name = "cloud-shell-storage-eastus"
 
 storage_accounts = {
   example1 = {
@@ -11,7 +11,8 @@ storage_accounts = {
       project     = "example"
     }
   }
-  example2 = {
+/*
+example2 = {
     name                     = "examplestorage2"
     location                 = "West US"
     account_tier             = "Premium"
@@ -22,3 +23,4 @@ storage_accounts = {
     }
   }
 }
+*/
