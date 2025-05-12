@@ -1,0 +1,9 @@
+resource_group_name       = "<your-resource-group>"
+location                  = "eastus"
+storage_account_name      = "<unique-storage-account-name>"
+account_tier              = "Standard"
+account_replication_type  = "LRS"
+tags = {
+  environment = "dev"
+  owner       = "your-name"
+}
