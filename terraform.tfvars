@@ -11,16 +11,4 @@ storage_accounts = {
       project     = "example"
     }
   }
-/*
-example2 = {
-    name                     = "examplestorage2"
-    location                 = "West US"
-    account_tier             = "Premium"
-    account_replication_type = "GRS"
-    tags = {
-      environment = "prod"
-      project     = "example"
-    }
-  }
 }
-*/
